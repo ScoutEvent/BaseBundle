@@ -21,7 +21,7 @@
     <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
     {% javascripts
-            '@ScoutBaseBundle/Resources/assets/js/*' %}
+            '@ScoutEventBaseBundle/Resources/assets/js/*' %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
 {% endblock %}
@@ -34,7 +34,7 @@
     <div class="col-md-4 vcentre">
       <div class="logo">
         <a href="{{ path('scout_base_app_list') }}">
-        {% image '@ScoutBaseBundle/Resources/public/images/logo.png' %}
+        {% image '@ScoutEventBaseBundle/Resources/public/images/logo.png' %}
             <img src="{{ asset_url }}" alt="Scouts" />
         {% endimage %}
         </a>

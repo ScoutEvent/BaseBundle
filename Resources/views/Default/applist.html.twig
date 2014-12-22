@@ -1,16 +1,16 @@
-{% extends 'ScoutBaseBundle:Default:base.html.twig' %}
+{% extends 'ScoutEventBaseBundle:Default:base.html.twig' %}
 
 {% block javascripts %}
     {{ parent() }}
     
     <script type="text/javascript">
         var tile_images = [
-            {% image '@ScoutBaseBundle/Resources/assets/tile_images/*' %}
+            {% image '@ScoutEventBaseBundle/Resources/assets/tile_images/*' %}
                 '{{ asset_url }}',
             {% endimage %}
         ];
     </script>
-    {% javascripts '@ScoutBaseBundle/Resources/assets/tile_images.js' %}
+    {% javascripts '@ScoutEventBaseBundle/Resources/assets/tile_images.js' %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
 {% endblock %}
