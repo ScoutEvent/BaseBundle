@@ -11,7 +11,7 @@
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" media="screen">
     {% include 'BraincraftedBootstrapBundle::ie8-support.html.twig' %}
     {% stylesheets
-            'bundles/scoutbase/css/*'
+            '@ScoutEventBaseBundle/Resources/public/css/*'
             filter='cssrewrite' %}
         <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
     {% endstylesheets %}
@@ -21,7 +21,7 @@
     <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
     {% javascripts
-            '@ScoutEventBaseBundle/Resources/assets/js/*' %}
+            '@ScoutEventBaseBundle/Resources/public/js/*' %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
 {% endblock %}
