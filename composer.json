@@ -1,0 +1,39 @@
+{
+    "name" : "ScoutEvent/BaseBundle",
+    "description" : "The basic bundle with the template and user management.",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "Chris Staite",
+        "email" : "chris@yourdreamnet.co.uk"
+    }],
+    "keywords" : [
+        "Scout Event Management"
+    ],
+    "license" : [
+        "GPL"
+    ],
+    "require" : {
+        "php": ">=5.3.3",
+        "symfony/symfony": "2.6.*",
+        "doctrine/orm": "~2.2,>=2.2.3",
+        "doctrine/doctrine-bundle": "~1.2",
+        "twig/extensions": "~1.0",
+        "symfony/assetic-bundle": "~2.3",
+        "braincrafted/bootstrap-bundle": "~2.0",
+        "twbs/bootstrap": "3.0.*",
+        "jquery/jquery":  "1.10.*",
+    },
+    "autoload" : {
+        "psr-0" : {
+            "ScoutEvent\\BaseBundle" : ""
+        }
+    },
+    "target-dir" : "ScoutEvent/BaseBundle",
+    "repositories" : [{
+    }],
+    "extra" : {
+        "branch-alias" : {
+            "dev-master" : "0.1-dev"
+        }
+    }
+}
