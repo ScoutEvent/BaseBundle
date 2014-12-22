@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<title>{% block title %}Scout Registration{% endblock %}</title>
+
+{% block stylesheets %}
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" media="screen">
+    {% include 'BraincraftedBootstrapBundle::ie8-support.html.twig' %}
+    {% stylesheets
+            'bundles/scoutbase/css/*'
+            filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
+    {% javascripts
+            '@ScoutBaseBundle/Resources/assets/js/*' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 vcentre">
+      <div class="logo">
+        <a href="{{ path('scout_base_app_list') }}">
+        {% image '@ScoutBaseBundle/Resources/public/images/logo.png' %}
+            <img src="{{ asset_url }}" alt="Scouts" />
+        {% endimage %}
+        </a>
+      </div>
+    </div><!--
+ --><div class="col-md-8 vcentre{% if is_granted('IS_AUTHENTICATED_FULLY') %} logout{% endif %}">
+     {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+        <form action="{{ path('scout_base_login') }}" method="post" id="login_form">
+            <input type="text" placeholder="email" name="_username" class="email" size="30" />
+            <input type="password" placeholder="password" name="_password" class="password" size="30" />
+            <button type="submit" class="btn">Login</button>
+        </form>
+     {% else %}
+        <a href="{{ path('scout_base_logout') }}">Logout <i class="fa fa-sign-out"></i></a>
+     {% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="container dynamicTile">
+  <div class="row">
+    {% block body %}
+    {% endblock %}
+  </div>
+</div>
+
+</body>
+
+</html>

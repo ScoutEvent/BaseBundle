@@ -1,0 +1,43 @@
+security:
+
+    encoders:
+        ScoutEvent\BaseBundle\Entity\User:
+            algorithm: sha512
+    
+    providers:
+        chain_provider:
+            chain:
+                providers: [user_db]
+        user_db:
+            entity: { class: ScoutEvent\BaseBundle\Entity\User, property: email }
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt))/
+            security: false
+
+        resource:
+            pattern: ^/css|images|js/
+            security: false
+
+        secured_area:
+            pattern:    ^/
+            anonymous:  ~
+            logout:
+                path:   /logout
+                target: /
+            form_login:
+                login_path: /
+                check_path: /login_check
+                success_handler: authentication_handler
+                failure_handler: authentication_handler
+
+        default:
+            anonymous: ~
+
+    access_decision_manager:
+        # strategy can be: affirmative, unanimous or consensus
+        strategy: unanimous
+
+    access_control:
+        - { path: ^/,               roles: IS_AUTHENTICATED_ANONYMOUSLY }

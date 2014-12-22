@@ -1,0 +1,130 @@
+
+body {
+    background-color: rgb(147, 155, 161);
+}
+
+.dynamicTile .col-sm-2.col-xs-4, .dynamicTile .col-sm-4.col-xs-8 {
+    padding: 5px;
+}
+
+.tile {
+    background-color: rgb(237, 119, 3);
+    color: #fff;
+    -webkit-border-top-right-radius: 15px;
+    -webkit-border-bottom-left-radius: 15px;
+    -moz-border-radius-topright: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.tile:hover {
+    -webkit-box-shadow: 2px 2px 1px 0px rgba(0,19,35,1);
+    -moz-box-shadow: 2px 2px 1px 0px rgba(0,19,35,1);
+    box-shadow: 2px 2px 1px 0px rgba(0,19,35,1);
+}
+
+.tile:active {
+    position: relative;
+    top: 2px;
+    left: 2px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+*:nth-child(2n) > a .tile {
+    background-color: rgb(77, 33, 119);
+}
+
+*:nth-child(4n) > a .tile {
+    background-color: rgb(132, 164, 11);
+}
+
+.tile .fa.hero {
+    display: block;
+    position: absolute;
+    bottom: -30px;
+    right: -12px;
+    font-size: 10em;
+    opacity: 0.4;
+}
+
+.tile .tiletitle {
+    font-size: 3em;
+    font-weight: 100;
+}
+
+.logo {
+    margin: 15px 40px;
+}
+
+.logo img {
+    width: 150px;
+    -ms-transform: rotate(-6deg); /* IE 9 */
+    -webkit-transform: rotate(-6deg); /* Chrome, Safari, Opera */
+    transform: rotate(-6deg);
+}
+
+.vcentre {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+#login_form {
+    text-align: right;
+    padding-right: 15px;
+}
+
+#login_form input {
+    -webkit-transition: border 0.5s linear;
+    -moz-transition: border 0.5s linear;
+    -ms-transition: border 0.5s linear;
+    -o-transition: border 0.5s linear;
+    transition: border 0.5s linear;
+    outline: 0;
+}
+
+#login_form input.error {
+    border-color: #f00;
+}
+
+.logout {
+    text-align: right;
+    padding-right: 30px;
+}
+
+.logout a {
+    background-color: rgb(0, 105, 144);
+    -webkit-border-top-left-radius: 15px;
+    -webkit-border-bottom-right-radius: 15px;
+    -moz-border-radius-topleft: 15px;
+    -moz-border-radius-bottomright: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 5px 10px;
+    color: #fff;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.singlebody {
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    background-color: rgb(0, 105, 144);
+    color: #fff;
+}
+
+.singlebody input, .singlebody button {
+    color: #000;
+}

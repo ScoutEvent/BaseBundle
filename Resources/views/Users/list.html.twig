@@ -1,0 +1,42 @@
+{% extends 'ScoutBaseBundle:Default:base.html.twig' %}
+
+{% block body %}
+    <div class="col-sm-10 col-sm-offset-1 singlebody">
+        <h1 class="page-header">Users</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Email</th>
+                    <th>Roles</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.getId }}</td>
+                        <td>{{ user.getEmail }}</td>
+                        <td class="text-overflow">
+                            {% for role in user.getRoles %}
+                                {{ role }}
+                            {% endfor %}
+                        </td>
+                        <td>
+                            <a href="{{ path('scout_base_user_edit', {'userId': user.getId}) }}" class="btn btn-default">
+                                <i class="fa fa-edit"></i>Edit
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="4" class="text-right">
+                        <a href="{{ path('scout_base_user_create') }}" class="btn btn-default">
+                            <i class="fa fa-plus"></i> Create
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

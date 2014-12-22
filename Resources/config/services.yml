@@ -1,0 +1,14 @@
+services:
+    authentication_handler:
+        class:  ScoutEvent\BaseBundle\Handler\AuthenticationHandler
+        arguments:  [@router]
+        public: false
+        tags:
+            - { name: 'monolog.logger', channel: 'security' }
+
+    security.access.route_voter:
+        class:      ScoutEvent\BaseBundle\Security\Authorization\Voter\RouteVoter
+        arguments:  [@security.authentication.trust_resolver, @request_stack, @router]
+        public:     false
+        tags:
+            - { name: security.voter }

@@ -1,0 +1,37 @@
+{% extends 'ScoutBaseBundle:Default:base.html.twig' %}
+
+{% block javascripts %}
+    {{ parent() }}
+    
+    <script type="text/javascript">
+        var tile_images = [
+            {% image '@ScoutBaseBundle/Resources/assets/tile_images/*' %}
+                '{{ asset_url }}',
+            {% endimage %}
+        ];
+    </script>
+    {% javascripts '@ScoutBaseBundle/Resources/assets/tile_images.js' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% block body %}
+
+    {% for app in applist %}
+        {% if app.large %}
+        <div class="col-sm-4 col-xs-8">
+        {% else %}
+        <div class="col-sm-2 col-xs-4">
+        {% endif %}
+            <a href="{{ app.link }}">
+                <div class="tile">
+                    <span class="tiletitle">{{ app.content }}</span>
+                    {% if app.icon %}
+                        <i class="fa {{ app.icon }} hero"></i>
+                    {% endif %}
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+
+{% endblock %}

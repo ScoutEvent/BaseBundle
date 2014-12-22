@@ -1,0 +1,30 @@
+scout_base_login:
+    path:     /login_check
+
+scout_base_logout:
+    path:     /logout
+
+scout_base_app_list:
+    path:     /
+    defaults: { _controller: ScoutEventBaseBundle:Default:appList }
+
+scout_base_user_list:
+    path:     /users
+    defaults:
+        _controller: ScoutEventBaseBundle:Users:list
+        roles: [ ROLE_ADMIN_USER ]
+        application:
+            icon: fa-smile-o
+            name: User Admin
+
+scout_base_user_create:
+    path:     /users/create
+    defaults:
+        _controller: ScoutEventBaseBundle:Users:create
+        roles: [ ROLE_ADMIN_USER ]
+
+scout_base_user_edit:
+    path:     /users/edit/{userId}
+    defaults:
+        _controller: ScoutEventBaseBundle:Users:edit
+        roles: [ ROLE_ADMIN_USER ]
