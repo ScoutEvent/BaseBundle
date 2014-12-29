@@ -28,7 +28,7 @@ implements AuthenticationSuccessHandlerInterface,
             $url = $targetPath;
         } else {
             // Otherwise, redirect him to wherever you want
-            $url = $this->generateUrl('scout_base_app_list');
+            $url = $this->router->generate('scout_base_app_list');
         }
         
         if ($request->isXmlHttpRequest()) {
@@ -61,7 +61,7 @@ implements AuthenticationSuccessHandlerInterface,
         } else {
             // Create a flash message with the authentication error message
             $request->getSession()->getFlashBag()->add('error', $exception->getMessage());
-            $url = $this->generateUrl('scout_base_login');
+            $url = $this->router->generate('scout_base_login');
 
             return new RedirectResponse($url);
         }
