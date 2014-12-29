@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
+
     public function appListAction()
     {
         $router = $this->container->get('router');
@@ -41,4 +42,10 @@ class DefaultController extends Controller
     
         return $this->render('ScoutEventBaseBundle:Default:applist.html.twig', array('applist' => $applist));
     }
+    
+    public function loginAction()
+    {
+        return $this->render('ScoutEventBaseBundle:Default:login.html.twig');
+    }
+    
 }

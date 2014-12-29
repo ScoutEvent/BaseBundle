@@ -60,7 +60,7 @@ implements AuthenticationSuccessHandlerInterface,
             return $response;
         } else {
             // Create a flash message with the authentication error message
-            $request->getSession()->setFlash('error', $exception->getMessage());
+            $request->getSession()->getFlashBag()->add('error', $exception->getMessage());
             $url = "/";
 
             return new RedirectResponse($url);

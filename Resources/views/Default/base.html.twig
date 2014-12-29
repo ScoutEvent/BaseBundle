@@ -42,7 +42,7 @@
     </div><!--
  --><div class="col-md-8 vcentre{% if is_granted('IS_AUTHENTICATED_FULLY') %} logout{% endif %}">
      {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
-        <form action="{{ path('scout_base_login') }}" method="post" id="login_form">
+        <form action="{{ path('scout_base_login_check') }}" method="post" id="login_form">
             <input type="text" placeholder="email" name="_username" class="email" size="30" />
             <input type="password" placeholder="password" name="_password" class="password" size="30" />
             <button type="submit" class="btn">Login</button>
@@ -54,7 +54,9 @@
   </div>
 </div>
 
-<div class="container dynamicTile">
+{% include 'BraincraftedBootstrapBundle::flash.html.twig' %}
+
+<div class="{% block containerclass %}container{% endblock %}">
   <div class="row">
     {% block body %}
     {% endblock %}

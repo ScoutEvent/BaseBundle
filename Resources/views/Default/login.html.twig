@@ -1,0 +1,27 @@
+{% extends 'ScoutEventBaseBundle:Default:base.html.twig' %}
+
+{% block body %}
+
+    <div class="row vertical-center-row">
+        <div class="col-lg-12">
+            <div class="row ">
+                <div class="col-xs-4 col-xs-offset-4">
+                    <form action="{{ path('scout_base_login_check') }}" method="post">
+                        <p>
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="_username" />
+                        </p>
+                        <p>
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="_password" />
+                        </p>
+                        <p>
+                            <input type="submit" name="login" />
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

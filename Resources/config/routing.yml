@@ -1,5 +1,9 @@
-scout_base_login:
+scout_base_login_check:
     path:     /login_check
+
+scout_base_login:
+    path:     /login
+    defaults: { _controller: ScoutEventBaseBundle:Default:login }
 
 scout_base_logout:
     path:     /logout
