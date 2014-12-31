@@ -47,6 +47,10 @@ class RouteVoter implements VoterInterface
 
         // Check if the role requires authentication
         if (array_key_exists("roles", $defaults)) {
+            if (count($defaults["roles"]) == 0) {
+                // No roles in list
+                return VoterInterface::ACCESS_ABSTAIN;
+            }
         
             // Look if the role is in the user roles
             $granted = false;
