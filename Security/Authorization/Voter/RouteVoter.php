@@ -40,7 +40,13 @@ class RouteVoter implements VoterInterface
         
         // Get the current route
         $request = $this->requestStack->getCurrentRequest();
-        $defaults = $allRoutes[$request->get('_route')]->getDefaults();
+        $route = $allRoutes[$request->get('_route')];
+        if (!method_exists($route, 'getDefaults'))
+        {
+            // No defaults set for this route, ignore
+            return VoterInterface::ACCESS_ABSTAIN;
+	    }
+        $defaults = $route->getDefaults();
         
         // Get the roles from the token
         $userRoles = $token->getRoles();
