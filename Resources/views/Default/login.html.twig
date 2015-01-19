@@ -4,7 +4,13 @@
 
     <div class="row vertical-center-row">
         <div class="col-lg-12">
-            <div class="row ">
+            <div class="row">
+                <p>
+                    Please log in to your account, otherwise 
+                    <a href="{{ path('scout_group_create') }}">click here</a> to register.
+                </p>
+            </div>
+            <div class="row">
                 <div class="col-xs-4 col-xs-offset-4">
                     <form action="{{ path('scout_base_login_check') }}" method="post">
                         <p>

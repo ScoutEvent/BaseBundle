@@ -32,6 +32,8 @@ security:
                 require_previous_session: false
                 success_handler: authentication_handler
                 failure_handler: authentication_handler
+                always_use_default_target_path: false
+                use_referer: true
 
         default:
             anonymous: ~

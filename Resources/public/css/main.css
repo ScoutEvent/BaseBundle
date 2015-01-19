@@ -128,3 +128,7 @@ a:hover {
 .singlebody input, .singlebody button {
     color: #000;
 }
+
+.table .table {
+    color: #333;
+}
