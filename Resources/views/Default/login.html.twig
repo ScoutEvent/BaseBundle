@@ -21,6 +21,9 @@
                             <label for="password">Password:</label>
                             <input type="password" id="password" name="_password" />
                         </p>
+                        {% if pathExists('scout_password_send_reset') %}
+                            <p><a href="{{ path('scout_password_send_reset') }}">Forgot password?</a></p>
+                        {% endif %}
                         <p>
                             <input type="submit" name="login" />
                         </p>

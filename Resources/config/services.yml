@@ -12,3 +12,9 @@ services:
         public:     false
         tags:
             - { name: security.voter }
+
+    app.twig_extension:
+        class: ScoutEvent\BaseBundle\Twig\RouteExtension
+        arguments:  [@router]
+        tags:
+            - { name: twig.extension }

@@ -46,6 +46,9 @@
             <input type="text" placeholder="email" name="_username" class="email" size="30" />
             <input type="password" placeholder="password" name="_password" class="password" size="30" />
             <button type="submit" class="btn">Login</button>
+            {% if pathExists('scout_password_send_reset') %}
+                <p><a href="{{ path('scout_password_send_reset') }}">Forgot password?</a></p>
+            {% endif %}
         </form>
      {% else %}
         <a href="{{ path('scout_base_logout') }}">Logout <i class="fa fa-sign-out"></i></a>
