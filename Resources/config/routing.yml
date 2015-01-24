@@ -1,11 +1,9 @@
 scout_base_login_check:
     path:     /login_check
-    schemes:  [https]
 
 scout_base_login:
     path:     /login
     defaults: { _controller: ScoutEventBaseBundle:Default:login }
-    schemes:  [https]
 
 scout_base_logout:
     path:     /logout
@@ -13,7 +11,6 @@ scout_base_logout:
 scout_base_app_list:
     path:     /
     defaults: { _controller: ScoutEventBaseBundle:Default:appList }
-    schemes:  [https]
 
 scout_base_user_list:
     path:     /users

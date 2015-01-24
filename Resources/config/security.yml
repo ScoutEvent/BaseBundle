@@ -43,4 +43,4 @@ security:
         strategy: unanimous
 
     access_control:
-        - { path: ^/,               roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
