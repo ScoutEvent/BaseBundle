@@ -129,6 +129,6 @@ a:hover {
     color: #000;
 }
 
-.table .table {
+.singlebody a:not(.btn) {
     color: #333;
 }
